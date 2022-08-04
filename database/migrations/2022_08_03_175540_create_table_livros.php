@@ -15,13 +15,14 @@ class CreateTableLivros extends Migration
             $table->string('nome');
             $table->string('categoria');
             $table->string('codigo',10);
-            $table->boolean('funcao')->false();
+            $table->string('autor');
+            $table->boolean('ebook');
             $table->string('tamanho_arquivo')->nullable();
             $table->string('peso')->nullable();
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('pessoas_id')->references('id')->on('livros');
+            $table->foreign('pessoas_id')->references('id')->on('pessoas');
         });
     }
 
